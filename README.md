@@ -575,7 +575,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email needyain@gmail.com or create an issue on GitHub.
+For support, email azzabughunter@gmail.com or create an issue on GitHub.
 
 ---
 
