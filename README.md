@@ -7,7 +7,7 @@ A comprehensive, modern eCommerce platform built with Laravel 12, featuring a be
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 
-<img width="1920" height="2136" alt="Image" src="[C:\PROJECT LARAVEL\eCommerceLaravel\izin.png](https://github.com/azza0x1a/E-COMMERCE-PROJECT/blob/main/izin.png)" />
+<img width="1920" height="2136" alt="Image" src="https://github.com/azza0x1a/E-COMMERCE-PROJECT/blob/main/izin.png" />
 
 ## ✨ Features
 
