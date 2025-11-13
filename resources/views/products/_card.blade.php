@@ -2,24 +2,23 @@
     <div class="position-relative">
         <a href="{{ route('products.show', $product->slug) }}" class="text-decoration-none">
             <div class="card-img-top bg-light d-flex align-items-center justify-content-center product-image-wrapper" style="overflow: hidden;">
-            @if($product->images->count() > 0)
-                <img src="{{ asset('storage/' . $product->images->first()->image_path) }}" 
-                     alt="{{ $product->name }}" 
-                         class="img-fluid product-image" 
-                         style="transition: transform 0.3s ease;">
-            @else
-                    <i class="bi bi-image text-muted" style="font-size: clamp(2rem, 5vw, 3rem);"></i>
-            @endif
-        </div>
-        </a>
-        
-        <!-- Badges -->
-        <div class="position-absolute top-0 start-0 m-2 d-flex flex-column gap-1" style="z-index: 2; max-width: calc(100% - 60px);">
-        @if($product->is_featured)
-                <span class="badge bg-warning text-dark" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis;">
-                <i class="bi bi-star-fill me-1"></i>Featured
-            </span>
-        @endif
+@if($product->images->count() > 0)
+    @php
+        $imagePath = $product->images->first()->image_path;
+        $imageUrl = asset('storage/products/' . $imagePath);
+    @endphp
+    <img src="{{ $imageUrl }}"
+         alt="{{ $product->name }}"
+         class="img-fluid product-image"
+         style="transition: transform 0.3s ease; object-fit: cover; width: 100%; height: 250px;">
+@else
+    <img src="{{ asset('uploads/products/default.png') }}"
+         alt="No Image"
+         class="img-fluid product-image"
+         style="object-fit: contain; width: 100%; height: 250px; opacity: .6;">
+@endif
+
+
         @if($product->compare_at_price && $product->compare_at_price > $product->price)
             @php
                 $discount = round((($product->compare_at_price - $product->price) / $product->compare_at_price) * 100);

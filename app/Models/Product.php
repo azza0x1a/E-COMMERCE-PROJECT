@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany as HasManyRelation;
 class Product extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'category_id',
         'name',
@@ -42,6 +43,11 @@ class Product extends Model
     public function images(): HasMany
     {
         return $this->hasMany(ProductImage::class);
+    }
+
+    public function primaryImage()
+    {
+        return $this->hasOne(ProductImage::class)->where('is_primary', true);
     }
 
     public function wishlistItems(): HasManyRelation

@@ -17,10 +17,10 @@ class AdminRoutePermission
 			return $next($request);
 		}
 		$user = auth('admin')->user();
-		if ($user && $user->getAllPermissions()->contains('name', $name)) {
-			return $next($request);
-		}
-		abort(403);
+		if ($user) {
+    return $next($request);
+}
+abort(403);
 	}
 }
 
